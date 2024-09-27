@@ -1,58 +1,61 @@
+import Link from "next/link";
 import Image from "next/image";
-import localFont from "next/font/local";
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { Textarea } from "@/components/ui/textarea"
+import { Label } from "@/components/ui/label"
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
 
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
-      <header className="px-4 lg:px-6 h-14 flex items-center">
-        <Link className="flex items-center justify-center" href="#">
-          <Wrench className="h-6 w-6 text-blue-600" />
-          <span className="ml-2 text-2xl font-bold text-gray-900">QuickFix Plumbing</span>
+      <header className="px-4 gap-9 justify-center lg:px-6 flex bg-white items-center">
+        <Link className="flex items-center justify-center " href="#">
+          <Image src="pirate.svg" alt="logo" width={120} height={120}/>
         </Link>
-        <nav className="ml-auto flex gap-4 sm:gap-6">
-          <Link className="text-sm font-medium hover:underline underline-offset-4" href="#">
+        <nav className="flex gap-4 sm:gap-6 text-gray-900">
+          <Link className="text-med font-medium hover:underline underline-offset-4" href="#">
             Services
           </Link>
-          <Link className="text-sm font-medium hover:underline underline-offset-4" href="#">
+          <Link className="text-med font-medium hover:underline underline-offset-4" href="#">
             About
           </Link>
-          <Link className="text-sm font-medium hover:underline underline-offset-4" href="#">
+          <Link className="text-med font-medium hover:underline underline-offset-4" href="#">
             Contact
           </Link>
         </nav>
       </header>
-      <main className="flex-1">
-        <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48 bg-blue-100">
-          <div className="container px-4 md:px-6">
-            <div className="flex flex-col items-center space-y-4 text-center">
+      <main className="flex-row"> 
+        <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48 bg-[url('/broom.svg')]">
+          <div className="container mx-auto px-4 md:px-6 flex flex-col md:flex-row items-center">
+            <div className="flex flex-col space-y-4 text-center md:text-left md:w-1/2">
               <div className="space-y-2">
-                <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
-                  Expert Plumbing Services
+                <h1 className="text-3xl font-bold tracking-tighter text-gray-900 sm:text-4xl md:text-5xl lg:text-6xl/none">
+                  Your go-to Plumbing Company for your home
                 </h1>
-                <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl">
-                  Fast, reliable, and professional plumbing solutions for your home or business.
+                <p className="max-w-[700px] text-gray-500 md:text-xl">
+                Pirate Plumbing is here to solve all of your water and drainage needs. 
+                Whether you need a simple repair or a complex install, we're here for you!
+                </p>
+                <p>
+                  Pirate Plumbing sails to the rescue for all your plumbing emergencies in Vancouver. 
+                  From leaky pipes to full bathroom overhauls, our crew of expert plumbers is ready to 
+                  swashbuckle any job, big or small. We treasure prompt, professional service and quality 
+                  workmanship that'll make your plumbing shine like buried gold.
                 </p>
               </div>
               <div className="space-x-4">
                 <Button>Get a Quote</Button>
-                <Button variant="outline">Learn More</Button>
+                <Button className="bg-white text-gray-900" variant="outline">Learn More</Button>
               </div>
+            </div>
+            <div className="md:w-1/2 mt-8 md:mt-0 flex justify-center">
+              <Image src="/plans.svg" alt="plumber" width={350} height={350} />
             </div>
           </div>
         </section>
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-white">
-          <div className="container px-4 md:px-6">
+        <section className="w-full py-12 md:py-24 lg:py-32 text-gray-900 bg-white">
+          <div className=" px-4 md:px-6">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-8">
               Request a Service
             </h2>
