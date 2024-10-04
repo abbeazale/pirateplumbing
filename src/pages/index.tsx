@@ -4,9 +4,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
-import { Inter } from "next/font/google"
 
-const inter = Inter({ subsets: ['latin'] })
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
