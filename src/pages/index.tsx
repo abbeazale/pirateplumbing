@@ -4,27 +4,26 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
+import { Inter } from "next/font/google"
 
-
+const inter = Inter({ subsets: ['latin'] })
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
-      <header className="px-4 gap-9 py-2 justify-between lg:px-6 flex bg-white items-center">
-        <Link className="flex pl-24 items-center justify-center " href="#">
+      <header className=" px-28 gap-9 py-2 font-mono justify-between lg: flex bg-white items-center">
+        <Link className="flex items-center justify-center " href="#">
           <Image src="pirate.svg" alt="logo" width={120} height={120} />
-          <h1 className="text-2xl text-black font-bold">Pirate Plumbing</h1>
         </Link>
-        <nav className="flex gap-24 pr-24 sm:gap-6 text-gray-900">
-          <Link className="text-lg font-medium hover:underline underline-offset-4" href="#">
-            Services
-          </Link>
-          <Link className="text-lg font-medium hover:underline underline-offset-4" href="#">
-            About
-          </Link>
-          <Link className="text-lg font-medium hover:underline underline-offset-4" href="#">
-            Contact
-          </Link>
-        </nav>
+        <Link className="text-2xl text-black font-bold hover:underline underline-offset-4" href="#">
+          Services
+        </Link>
+        <Link className="text-2xl font-bold text-black hover:underline underline-offset-4" href="#">
+          About
+        </Link>
+        <Link className="text-2xl font-bold hover:underline text-black underline-offset-4" href="#">
+          Contact
+        </Link>
+        <Button className="bg-gradient-to-r from-orange-400 to-orange-600">Get a Quote</Button>
       </header>
       <main className="flex-row">
         <section className="w-full bg-cover h-min py-8 px-20 bg-[url('/broom.svg')]">
@@ -34,7 +33,7 @@ export default function Home() {
                 <h1 className="text-3xl font-bold tracking-tighter text-gray-900 sm:text-4xl md:text-5xl lg:text-6xl/none">
                   Your go-to Plumbing Company for your home
                 </h1>
-                <p className="max-w-[700px] text-gray-500 md:text-xl">
+                <p className="max-w-[700px] md:text-xl">
                   Pirate Plumbing is here to solve all of your water and drainage needs.
                   Whether you need a simple repair or a complex install, we're here for you!
                 </p>
@@ -46,8 +45,7 @@ export default function Home() {
                 </p>
               </div>
               <div className="space-x-4">
-                <Button>Get a Quote</Button>
-                <Button className="bg-white text-gray-900" variant="outline">Learn More</Button>
+                <Button className="bg-gradient-to-r from-orange-400 to-orange-600">Get a Quote</Button>
               </div>
             </div>
             <div className="md:w-1/2 mt-8 md:mt-0 flex justify-center">
