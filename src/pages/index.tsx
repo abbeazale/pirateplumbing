@@ -81,9 +81,18 @@ export default function Home() {
                   <Label htmlFor="name">Name</Label>
                   <Input id="name" placeholder="Name" required />
                 </div>
-                <div className="space-y-2">
+                <div className="space-y-2 w-full">
                   <Label htmlFor="location">Location (City)</Label>
-                  <Input id="location" placeholder="Vancouver" required />
+                  <div className="space-y-2">
+                    <select className="w-full h-9" id="location">
+                      <option className="w-full" value="">Select a location</option>
+                      {locations.map((location: string) => (
+                        <option key={location} value={location}>
+                          {location}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
                 </div>
               </div>
               <div className="space-y-2">
