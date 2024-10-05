@@ -1,11 +1,30 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
 import Image from "next/image";
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
+import { useState } from "react";
+
+interface Email {
+  images?: File | null | string;
+  name: string
+  email: string
+  issue: string
+  location: Location
+}
+
+const locations = ["Vancouver", "Richmond", "Surrey", "Coquitlam", "Burnaby", "North Vancouver", "West Vancouver", "White Rock"]
 
 export default function Home() {
+
+  const [name, setName] = useState("");
+  const [location, setLocaton] = useState("")
+  const [phoneNumber, setPhoneNumber] = useState(0)
+  const [email, setEmail] = useState("")
+  const [issue, setIssue] = useState("")
+
   return (
     <div className="flex flex-col min-h-screen">
       <header className=" px-28 gap-9 py-2 font-mono justify-between lg: flex bg-white items-center">
