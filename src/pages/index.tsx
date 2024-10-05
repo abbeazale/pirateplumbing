@@ -4,6 +4,15 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
 import { Label } from "@/components/ui/label"
 import { useState } from "react";
 
@@ -84,14 +93,13 @@ export default function Home() {
                 <div className="space-y-2 w-full">
                   <Label htmlFor="location">Location (City)</Label>
                   <div className="space-y-2">
-                    <select className="w-full h-9" id="location">
-                      <option className="w-full" value="">Select a location</option>
-                      {locations.map((location: string) => (
-                        <option key={location} value={location}>
-                          {location}
-                        </option>
-                      ))}
-                    </select>
+                    <Select>
+                      <SelectTrigger>
+                        <SelectValue placeholder="Select a location" />
+                      </SelectTrigger>
+                      <SelectContent>
+                      </SelectContent>
+                    </Select>
                   </div>
                 </div>
               </div>
