@@ -15,6 +15,7 @@ import {
 } from "@/components/ui/select"
 import { Label } from "@/components/ui/label"
 import { useState } from "react";
+import { uploadPic } from "@/backend/actions";
 
 interface Message {
   images?: File[] | null | string[];
@@ -60,8 +61,10 @@ export default function Home() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
+    let imagesCloudinaryUri: string[] = [];
     let imagesBase64: string[] = [];
 
+    // Convert images to base64 strings
     if (message.images && message.images.length > 0) {
       imagesBase64 = await Promise.all(
         message.images.map(async (image) => {
@@ -73,6 +76,8 @@ export default function Home() {
       );
     }
 
+   
+
     const response = await fetch('/api/reactEmail', {
       method: 'POST',
       headers: {
@@ -80,7 +85,7 @@ export default function Home() {
       },
       body: JSON.stringify({
         ...message,
-        images: imagesBase64,
+        images: imagesBase64, // Include the base64 images in the request body
       }),
     });
 
@@ -89,7 +94,7 @@ export default function Home() {
     } else {
       console.error('Failed to send email');
     }
-    console.log("message sent: ", message.email, message.name, message.issue, message.location, message.phoneNumber, imagesBase64)
+    console.log("message sent: ", message.email, message.name, message.issue, message.location, message.phoneNumber, imagesBase64);
     //router.reload();
   };
 

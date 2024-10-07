@@ -5,7 +5,9 @@ import { uploadPic } from '@/backend/actions';
 import Email from '@/components/email';
 import { NextApiRequest, NextApiResponse } from 'next';
 
+
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+    console.log('Request body:', req.body)
     const transporter = nodemailer.createTransport({
         port: 587,
         host: 'smtp.gmail.com',
@@ -35,20 +37,39 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     // Render the Email component to HTML
     const emailHtml = await render(emailElement);
 
-    const attachments = await Promise.all(
+    /*const attachments = await Promise.all(
         req.body.images.map(async (image: Image) => {
+            console.log('Image:', image)
             console.log('Attempting to upload image to Cloudinary...');
             const uploadResult = await uploadPic(image.url); // Pass the individual image
-            return { filename: uploadResult.name, path: uploadResult.url };
+            return { filename: uploadResult.name, path: uploadResult.url, encoding: "base64" };
         })
-    );
+    ); */
 
-    const options = {
+    var cloudinaryUri = await uploadPic(req.body.images[0]);
+    var cloudinaryImageUri: string[] = [];
+     //upload images from base64 to cloudinary
+     if (req.body.images.length > 0) {
+        cloudinaryImageUri = await Promise.all(
+          req.body.images.map(async (image: string) => {
+            const result = await uploadPic(image);
+            return result.url;
+          })
+        );
+      }
+
+    var options = {
         from: 'devkettleteam@gmail.com ',
         to: 'devkettleteam@gmail.com',
         subject: 'New Customer Form Submission',
         html: emailHtml,
-        attachments: attachments
+        attachments: [
+            {
+                filename: 'image.png',
+                path: `${cloudinaryImageUri[0]}`,
+
+            }
+        ]
     };
 
     await transporter.sendMail(options);

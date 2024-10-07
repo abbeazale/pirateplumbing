@@ -1,7 +1,7 @@
 import { v2 as cloudinary } from 'cloudinary';
 
 
-export async function uploadPic(image: string): Promise<{ url: string; name: string }> {
+export async function uploadPic(image: string): Promise<{ url: string;}> {
 
   if (!process.env.CLOUDINARY_CLOUD_NAME || !process.env.CLOUDINARY_API_KEY || !process.env.CLOUDINARY_API_SECRET) {
     console.error('Cloudinary environment variables are not set');
@@ -24,7 +24,8 @@ export async function uploadPic(image: string): Promise<{ url: string; name: str
     });
     console.log('Image uploaded successfully:', result.secure_url);
     //returns the url for the image in cloudinary
-    return { url: result.secure_url, name: result.original_filename };
+    //return { url: result.secure_url, name: result.original_filename };
+    return { url: result.secure_url };
   } catch (error) {
     console.error('Error uploading image to Cloudinary:', error);
     throw error;
