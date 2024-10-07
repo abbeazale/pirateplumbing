@@ -35,10 +35,13 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     // Render the Email component to HTML
     const emailHtml = await render(emailElement);
 
-    const attachments = req.body.images.map((image: Image) => async () =>{
-        const uploadResult = await uploadPic(req.body.images);
-        return { filename: uploadResult.name, href: uploadResult.url };;
-    });
+    const attachments = await Promise.all(
+        req.body.images.map(async (image: Image) => {
+            console.log('Attempting to upload image to Cloudinary...');
+            const uploadResult = await uploadPic(image.url); // Pass the individual image
+            return { filename: uploadResult.name, path: uploadResult.url };
+        })
+    );
 
     const options = {
         from: 'devkettleteam@gmail.com ',
