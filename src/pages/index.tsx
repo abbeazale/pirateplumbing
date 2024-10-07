@@ -184,7 +184,13 @@ export default function Home() {
               </div>
               <div className="space-y-2">
                 <Label htmlFor="issue">Issue/Problem</Label>
-                <Textarea className="resize-none" id="issue" value={message.issue} placeholder="Describe your plumbing issue..." required />
+                <Textarea 
+                  className="resize-none" 
+                  id="issue" 
+                  onChange={(event) => setMessage({ ...message, issue: event.target.value })} 
+                  placeholder="Describe your plumbing issue..." 
+                  required 
+                />
               </div>
               <div className="space-y-2">
                 <Label htmlFor="photos">Upload Photos (up to 5)</Label>

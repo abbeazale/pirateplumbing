@@ -7,9 +7,10 @@ import { NextApiRequest, NextApiResponse } from 'next';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
     const transporter = nodemailer.createTransport({
-        host: 'smtp.forwardemail.net',
-        port: 465,
-        secure: true,
+        port: 587,
+        host: 'smtp.gmail.com',
+        service:'smtp.gmail.com',
+        secure: false,
         auth: {
             user: process.env.GMAIL,
             pass: process.env.APP_PASS,
