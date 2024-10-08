@@ -15,7 +15,7 @@ import {
 } from "@/components/ui/select"
 import { Label } from "@/components/ui/label"
 import { useState } from "react";
-import { uploadPic } from "@/backend/actions";
+import Header from "@/components/Header";
 
 interface Message {
   images?: File[] | null | string[];
@@ -100,21 +100,7 @@ export default function Home() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <header className=" px-28 gap-9 py-2 font-mono justify-between lg: flex bg-white items-center">
-        <Link className="flex items-center justify-center " href="#">
-          <Image src="pirate.svg" alt="logo" width={120} height={120} />
-        </Link>
-        <Link className="text-2xl text-black font-bold hover:underline underline-offset-4" href="#">
-          Services
-        </Link>
-        <Link className="text-2xl font-bold text-black hover:underline underline-offset-4" href="#">
-          About
-        </Link>
-        <Link className="text-2xl font-bold hover:underline text-black underline-offset-4" href="#">
-          Contact
-        </Link>
-        <Button className="bg-gradient-to-r from-orange-400 to-orange-600">Get a Quote</Button>
-      </header>
+      <Header/>
       <main className="flex-row">
         <section className="w-full bg-cover h-min py-8 px-20 bg-[url('/broom.svg')]">
           <div className="container mx-auto px-4 md:px-6 flex flex-col md:flex-row items-center">
