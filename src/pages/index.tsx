@@ -38,7 +38,7 @@ function toBase64(file: File): Promise<string> {
 
 
 export default function Home() {
-  
+
   const [message, setMessage] = useState<Message>({
     images: null,
     name: "",
@@ -76,7 +76,7 @@ export default function Home() {
       );
     }
 
-   
+
 
     const response = await fetch('/api/reactEmail', {
       method: 'POST',
@@ -100,7 +100,7 @@ export default function Home() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <Header/>
+      <Header />
       <main className="flex-row">
         <section className="w-full bg-cover h-min py-8 px-20 bg-[url('/broom.svg')]">
           <div className="container mx-auto px-4 md:px-6 flex flex-col md:flex-row items-center">
@@ -138,12 +138,12 @@ export default function Home() {
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <Label htmlFor="name">Name</Label>
-                  <Input 
-                    id="name" 
-                    value={message.name} 
+                  <Input
+                    id="name"
+                    value={message.name}
                     onChange={(e) => setMessage(prevMessage => ({ ...prevMessage, name: e.target.value }))}
-                    placeholder="Name" 
-                    required 
+                    placeholder="Name"
+                    required
                   />
                 </div>
                 <div className="space-y-2 w-full">
@@ -175,39 +175,39 @@ export default function Home() {
               </div>
               <div className="space-y-2">
                 <Label htmlFor="issue">Issue/Problem</Label>
-                <Textarea 
-                  className="resize-none" 
-                  id="issue" 
-                  onChange={(event) => setMessage({ ...message, issue: event.target.value })} 
-                  placeholder="Describe your plumbing issue..." 
-                  required 
+                <Textarea
+                  className="resize-none"
+                  id="issue"
+                  onChange={(event) => setMessage({ ...message, issue: event.target.value })}
+                  placeholder="Describe your plumbing issue..."
+                  required
                 />
               </div>
               <div className="space-y-2">
                 <Label htmlFor="photos">Upload Photos (up to 5)</Label>
-                <Input id="photos" onChange={handleImageChange} type="file" multiple accept="image/*" max="5" />
+                <Input id="photos" onChange={handleImageChange} type="file" multiple />
               </div>
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <Label htmlFor="email">Email</Label>
-                  <Input 
-                    id="email" 
-                    type="email" 
+                  <Input
+                    id="email"
+                    type="email"
                     value={message.email}
                     onChange={(e) => setMessage(prevMessage => ({ ...prevMessage, email: e.target.value }))}
-                    placeholder="john@example.com" 
-                    required 
+                    placeholder="john@example.com"
+                    required
                   />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="phone">Phone Number</Label>
-                  <Input 
-                    id="phone" 
-                    type="tel" 
+                  <Input
+                    id="phone"
+                    type="tel"
                     value={message.phoneNumber}
                     onChange={(e) => setMessage(prevMessage => ({ ...prevMessage, phoneNumber: e.target.value }))}
-                    placeholder="(123) 456-7890" 
-                    required 
+                    placeholder="(123) 456-7890"
+                    required
                   />
                 </div>
               </div>
