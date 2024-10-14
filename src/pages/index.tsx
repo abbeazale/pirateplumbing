@@ -185,7 +185,7 @@ export default function Home() {
               </div>
               <div className="space-y-2">
                 <Label htmlFor="photos">Upload Photos (up to 5)</Label>
-                <Input id="photos" onChange={handleImageChange} type="file" multiple />
+                <Input id="photos" onChange={handleImageChange} type="file" multiple accept="image/*" max="5" />
               </div>
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-2">

@@ -85,7 +85,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       },
       {
         filename: 'image5.png',
-        path: `${cloudinaryImageUri[4]}`,
+        path: `${cloudinaryImageUri[0]}`,
 
       }
 

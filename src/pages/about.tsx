@@ -1,6 +1,6 @@
 import Header from "@/components/Header";
-import Image from "next/image";
-import { Button } from "@react-email/components";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Anchor, Compass, Map, Shield } from 'lucide-react'
 
@@ -21,46 +21,64 @@ export default function About() {
             <CardHeader>
               <CardTitle className="flex items-center">
                 <Compass className="mr-2 h-6 w-6" />
-                Expert Navigation
+                Our Story
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p>We navigate the treacherous waters of plumbing with unmatched expertise.</p>
+              <p className="text-sm">Founded on the principles of integrity, reliability, and a touch of adventure, Pirate
+                Plumbing was established to meet the diverse needs of Vancouver’s plumbing requirements.
+                Our crew is passionate about delivering high-quality service while adding a bit of swashbuckling
+                flair to your experience.</p>
             </CardContent>
           </Card>
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center">
                 <Shield className="mr-2 h-6 w-6" />
-                Treasure Protection
+                Our Crew
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p>We guard your home's plumbing treasures with our lives (and top-notch services).</p>
+              <p className="text-sm">At Pirate Plumbing, we are proud to employ a skilled and dedicated team
+                of licensed plumbers who bring years of experience to every job. Each member of our crew
+                is not only adept at handling complex plumbing issues but also committed to upholding our
+                high standards of customer satisfaction. We believe in treating every job—no matter how big
+                or small—with the utmost professionalism and attention to detail.</p>
             </CardContent>
           </Card>
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center">
                 <Map className="mr-2 h-6 w-6" />
-                Uncharted Solutions
+                Our Mission
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p>No plumbing problem is too mysterious for our crew to solve.</p>
+              <p className="text-sm">Our mission is simple: to provide Vancouver with reliable, efficient, and friendly plumbing services,
+                all while embracing a unique and memorable pirate theme. We strive to exceed our customers' expectations
+                with every service call, ensuring your home or business remains in excellent working order.</p>
             </CardContent>
           </Card>
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center">
                 <Anchor className="mr-2 h-6 w-6" />
-                Anchored Reliability
+                Contact Us
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p>We're always here when you need us, as steady as an anchor in a storm.</p>
+              <p>Ready to set sail on a worry-free plumbing journey? Contact us today for a free quote or to schedule an appointment. Our friendly crew is here to assist you with all your plumbing needs and ensure your experience is smooth and enjoyable.
+                Thank you for considering Pirate Plumbing—where every service is a treasure! </p>
             </CardContent>
           </Card>
+        </div>
+
+        <div className="space-x-4 p-12">
+          <Button className="bg-gradient-to-r from-orange-400 to-orange-600">
+            <Link href="/contact">
+              Contact Us
+            </Link>
+          </Button>
         </div>
       </main>
     </div>
