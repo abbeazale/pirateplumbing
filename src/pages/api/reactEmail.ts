@@ -5,6 +5,14 @@ import { uploadPic } from '@/backend/actions';
 import Email from '@/components/email';
 import { NextApiRequest, NextApiResponse } from 'next';
 
+export const config = {
+  api: {
+    bodyParser: {
+      sizeLimit: '10mb', 
+    },
+  },
+};
+
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   console.log('Request body:', req.body)
@@ -46,6 +54,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       })
   ); */
 
+  
+
   var cloudinaryImageUri: string[] = [];
   //upload images from base64 to cloudinary
   if (req.body.images.length > 0) {
@@ -57,12 +67,18 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     );
   }
 
+  const attachments = cloudinaryImageUri.map((uri, index) => ({
+    filename: `image${index + 1}.png`,
+    path: uri,
+  }));
+
+
   var options = {
     from: 'devkettleteam@gmail.com ',
     to: 'devkettleteam@gmail.com',
     subject: 'New Customer Form Submission',
     html: emailHtml,
-    attachments: [
+    attachments: attachments /*[
       {
         filename: 'image1.png',
         path: `${cloudinaryImageUri[0]}`,
@@ -85,13 +101,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       },
       {
         filename: 'image5.png',
-        path: `${cloudinaryImageUri[0]}`,
+        path: `${cloudinaryImageUri[4]}`,
 
       }
 
-
-
-    ]
+    ] */
   };
 
   await transporter.sendMail(options);
