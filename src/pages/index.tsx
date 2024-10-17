@@ -102,7 +102,7 @@ export default function Home() {
     <div className="flex flex-col min-h-screen">
       <Header />
       <main className="flex-row">
-        <section className="w-full bg-cover h-min py-8 px-20 bg-[url('/broom.svg')]">
+        <section className="w-full bg-cover min-h-screen py-8 px-20 bg-[url('/broom.svg')]">
           <div className="container mx-auto px-4 md:px-6 flex flex-col md:flex-row items-center">
             <div className="flex flex-col space-y-4 text-center md:text-left md:w-1/2">
               <div className="space-y-2">

@@ -79,7 +79,6 @@ export default function Contact() {
     }
 
 
-
     const response = await fetch('/api/reactEmail', {
       method: 'POST',
       headers: {
@@ -102,9 +101,9 @@ export default function Contact() {
 
 
   return (
-    <div>
+    <div className="bg-white">
       <Header />
-      <section className="w-full py-10 md:py-24 lg:py-32 text-gray-900 bg-white">
+      <section className="w-full  min-h-screen py-12 md:py-24 lg:py-32 text-gray-900 bg-white ">
         <div className=" px-4 md:px-6">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-8">
             Contact Us
