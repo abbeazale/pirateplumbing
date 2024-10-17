@@ -95,7 +95,7 @@ export default function Home() {
       console.error('Failed to send email');
     }
     console.log("message sent: ", message.email, message.name, message.issue, message.location, message.phoneNumber, imagesBase64);
-    //router.reload();
+    router.reload();
   };
 
   return (

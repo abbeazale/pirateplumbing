@@ -11,16 +11,16 @@ export default function Header() {
         <Link className="flex items-center justify-center " href="/">
           <Image src="pirate.svg" alt="logo" width={120} height={120} />
         </Link>
-        <Link className="text-2xl text-black font-bold hover:underline underline-offset-4" href="">
+        <Link className="text-2xl text-black font-bold hover:underline underline-offset-4" href="/services">
           Services
         </Link>
         <Link className="text-2xl font-bold text-black hover:underline underline-offset-4" href="/about">
           About
         </Link>
-        <Link className="text-2xl font-bold hover:underline text-black underline-offset-4" href="">
+        <Link className="text-2xl font-bold hover:underline text-black underline-offset-4" href="/contact">
           Contact
         </Link>
-        <Button className="bg-gradient-to-r from-orange-400 to-orange-600">Get a Quote</Button>
+        <Button ref="/contact"  className="bg-gradient-to-r from-orange-400 to-orange-600">Get a Quote</Button>
       </header>
     )
 }
