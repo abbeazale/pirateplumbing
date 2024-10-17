@@ -13,7 +13,7 @@ export default function ServicesPage() {
             <h2 className="text-3xl font-bold text-black tracking-tighter sm:text-4xl md:text-5xl text-center mb-8">
               Our Plumbing Services
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:grid-cols-2">
               {[
                 { icon: AlertTriangle, title: "Emergency Repairs", description: "When plumbing disasters strike, our crew will swoop in faster than you can hoist the Jolly Roger!" },
                 { icon: Droplet, title: "Leak Detection & Repair", description: "We'll find and fix those sneaky leaks faster than you can say 'Davy Jones' locker!'" },
@@ -40,7 +40,7 @@ export default function ServicesPage() {
             </div>
           </div>
         </section>
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-orange-100">
+        <section className="w-full py-8 md:py-24 lg:py-18 bg-orange-200">
           <div className="container mx-auto px-4 md:px-6">
             <h2 className="text-3xl font-bold text-black tracking-tighter sm:text-4xl md:text-5xl text-center mb-8">
               Why Choose Pirate Plumbing?
@@ -48,7 +48,7 @@ export default function ServicesPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
                 { title: "24/7 Emergency Service", description: "We're always on deck, ready to sail to your rescue." },
-                { title: "Licensed & Insured Crew", description: "Our plumbers are as certified as they come, savvy?" },
+                { title: "Licensed & Insured Crew", description: "Our plumbers are as certified as they come." },
                 { title: "Fair & Transparent Pricing", description: "No hidden costs - we're as honest as a pirate's parrot." },
                 { title: "Satisfaction Guaranteed", description: "We'll make it right, or walk the plank!" },
               ].map((feature, index) => (
@@ -64,7 +64,7 @@ export default function ServicesPage() {
             </div>
           </div>
         </section>
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-[url('/ocean-waves.svg')] bg-cover text-white">
+        <section className="w-full py-8 md:py-24 lg:py-32 bg-[url('/ocean-waves.svg')] bg-cover text-white">
           <div className="container mx-auto px-4 md:px-6 text-center">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-4">
               Ready to Set Sail on Your Next Plumbing Adventure?
@@ -76,6 +76,7 @@ export default function ServicesPage() {
           </div>
         </section>
       </main>
+      {/* Hello World 
       <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t">
         <p className="text-xs text-gray-500">© 2024 Pirate Plumbing. All rights reserved.</p>
         <nav className="sm:ml-auto flex gap-4 sm:gap-6">
@@ -86,7 +87,7 @@ export default function ServicesPage() {
             Privacy
           </Link>
         </nav>
-      </footer>
+      </footer> */}
     </div>
   )
 }
