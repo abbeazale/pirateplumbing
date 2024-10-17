@@ -62,8 +62,6 @@ export default function Contact() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
-    let imagesCloudinaryUri: string[] = [];
     let imagesBase64: string[] = [];
 
     // Convert images to base64 strings
@@ -77,7 +75,6 @@ export default function Contact() {
         })
       );
     }
-
 
     const response = await fetch('/api/reactEmail', {
       method: 'POST',
@@ -96,7 +93,7 @@ export default function Contact() {
       console.error('Failed to send email');
     }
     console.log("message sent: ", message.email, message.name, message.issue, message.location, message.phoneNumber, imagesBase64);
-    router.reload();
+    //router.reload();
   };
 
 
@@ -106,7 +103,7 @@ export default function Contact() {
       <section className="w-full  min-h-screen py-12 md:py-24 lg:py-32 text-gray-900 bg-white ">
         <div className=" px-4 md:px-6">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-8">
-            Contact Us
+            Contact Us Today
           </h2>
           <form onSubmit={handleSubmit} className="max-w-2xl mx-auto space-y-4">
             <div className="grid grid-cols-2 gap-4">
@@ -185,7 +182,7 @@ export default function Contact() {
                 />
               </div>
             </div>
-            <Button type="submit" className="w-full">Submit Request</Button>
+            <Button type="submit" className="w-full bg-gradient-to-r from-orange-400 to-orange-600">Submit Request</Button>
           </form>
         </div>
       </section>
