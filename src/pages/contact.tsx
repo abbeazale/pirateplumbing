@@ -1,4 +1,5 @@
 import React from "react"
+import Head from "next/head"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
@@ -97,6 +98,10 @@ export default function Contact() {
 
   return (
     <div className="bg-white">
+      <Head>
+        <title>Contact Us</title>
+      </Head>
+
       <Header />
       <section className="w-full  min-h-screen py-12 md:py-24 lg:py-32 text-gray-900 bg-white ">
         <div className=" px-4 md:px-6">

@@ -1,4 +1,5 @@
 import Header from "@/components/Header";
+import Head from "next/head";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
@@ -7,6 +8,10 @@ import { Anchor, Compass, Map, Shield } from 'lucide-react'
 export default function About() {
   return (
     <div className="flex flex-col w-full min-h-screen bg-white text-black">
+      <Head>
+        <title>About Us</title>
+      </Head>
+
       <Header />
       <main className="flex flex-col justify-center px-6 items-center">
         <div className="flex flex-col justify-center items-center pt-20 text-center">
