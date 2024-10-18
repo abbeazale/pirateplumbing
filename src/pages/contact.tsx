@@ -1,7 +1,5 @@
 import React from "react"
-import Link from "next/link";
 import { useRouter } from "next/router";
-import Image from "next/image";
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
@@ -50,6 +48,7 @@ export default function Contact() {
     phoneNumber: ""
   });
 
+  const [isSuccess, setIsSuccess] = useState(false)
   const router = useRouter();
 
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -89,7 +88,9 @@ export default function Contact() {
 
     if (response.ok) {
       console.log('Email sent successfully');
+      setIsSuccess(true)
     } else {
+      setIsSuccess(false)
       console.error('Failed to send email');
     }
     console.log("message sent: ", message.email, message.name, message.issue, message.location, message.phoneNumber, imagesBase64);
@@ -184,6 +185,11 @@ export default function Contact() {
             </div>
             <Button type="submit" className="w-full bg-gradient-to-r from-orange-400 to-orange-600">Submit Request</Button>
           </form>
+          {isSuccess && (
+            <p className="mt-4 text-green-600 text-center">
+              Your message was sent! We will get back to you soon.
+            </p>
+          )}
         </div>
       </section>
     </div>

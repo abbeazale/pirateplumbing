@@ -1,6 +1,5 @@
 import React from 'react';
 import { Img } from '@react-email/components';
-import Image from 'next/image';
 
 interface ServiceRequestProps {
   email: string;

@@ -55,7 +55,7 @@ export default function About() {
             </CardHeader>
             <CardContent>
               <p className="text-sm">Our mission is simple: to provide Vancouver with reliable, efficient, and friendly plumbing services,
-                all while embracing a unique and memorable pirate theme. We strive to exceed our customers' expectations
+                all while embracing a unique and memorable pirate theme. We strive to exceed our customers&apos; expectations
                 with every service call, ensuring your home or business remains in excellent working order.</p>
             </CardContent>
           </Card>
