@@ -1,5 +1,4 @@
 import React from "react"
-import { useRouter } from "next/router";
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
@@ -49,7 +48,6 @@ export default function Contact() {
   });
 
   const [isSuccess, setIsSuccess] = useState(false)
-  const router = useRouter();
 
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = e.target.files;
@@ -94,7 +92,6 @@ export default function Contact() {
       console.error('Failed to send email');
     }
     console.log("message sent: ", message.email, message.name, message.issue, message.location, message.phoneNumber, imagesBase64);
-    //router.reload();
   };
 
 

@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { useRouter } from "next/router";
 import Image from "next/image";
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -48,7 +47,6 @@ export default function Home() {
     phoneNumber: ""
   });
   const [isSuccess, setIsSuccess] = useState(false)
-  const router = useRouter();
 
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = e.target.files;
@@ -96,7 +94,6 @@ export default function Home() {
       setIsSuccess(false)
     }
     console.log("message sent: ", message.email, message.name, message.issue, message.location, message.phoneNumber, imagesBase64);
-    router.reload();
   };
 
   return (
