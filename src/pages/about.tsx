@@ -25,7 +25,7 @@ export default function About() {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-sm">Founded on the principles of integrity, reliability, and a touch of adventure, Pirate
+              <p>Founded on the principles of integrity, reliability, and a touch of adventure, Pirate
                 Plumbing was established to meet the diverse needs of Vancouver’s plumbing requirements.
                 Our crew is passionate about delivering high-quality service while adding a bit of swashbuckling
                 flair to your experience.</p>
@@ -39,7 +39,7 @@ export default function About() {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-sm">At Pirate Plumbing, we are proud to employ a skilled and dedicated team
+              <p>At Pirate Plumbing, we are proud to employ a skilled and dedicated team
                 of licensed plumbers who bring years of experience to every job. Each member of our crew
                 is not only adept at handling complex plumbing issues but also committed to upholding our
                 high standards of customer satisfaction. We believe in treating every job—no matter how big
@@ -54,7 +54,7 @@ export default function About() {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-sm">Our mission is simple: to provide Vancouver with reliable, efficient, and friendly plumbing services,
+              <p>Our mission is simple: to provide Vancouver with reliable, efficient, and friendly plumbing services,
                 all while embracing a unique and memorable pirate theme. We strive to exceed our customers&apos; expectations
                 with every service call, ensuring your home or business remains in excellent working order.</p>
             </CardContent>
@@ -81,6 +81,17 @@ export default function About() {
           </Button>
         </div>
       </main>
+      <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6">
+        <p className="text-xs text-gray-500">© 2024 Pirate Plumbing. All rights reserved.</p>
+        {/*<nav className="sm:ml-auto flex gap-4 sm:gap-6">
+          <Link className="text-xs hover:underline underline-offset-4" href="#">
+            Terms of Service
+          </Link>
+          <Link className="text-xs hover:underline underline-offset-4" href="#">
+            Privacy
+          </Link>
+        </nav>*/}
+      </footer>
     </div>
   )
 }

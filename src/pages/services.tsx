@@ -64,7 +64,7 @@ export default function ServicesPage() {
             </div>
           </div>
         </section>
-        <section className="w-full py-8 md:py-24 lg:py-32 bg-[url('/ocean-waves.svg')] bg-cover text-white">
+        <section className="w-full py-8 md:py-24 lg:py-24 bg-cover text-white">
           <div className="container mx-auto px-4 md:px-6 text-center">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-4">
               Ready to Set Sail on Your Next Plumbing Adventure?
@@ -80,18 +80,18 @@ export default function ServicesPage() {
           </div>
         </section>
       </main>
-      {/* Hello World 
-      <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t">
+      <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 ">
         <p className="text-xs text-gray-500">© 2024 Pirate Plumbing. All rights reserved.</p>
-        <nav className="sm:ml-auto flex gap-4 sm:gap-6">
+        {/*<nav className="sm:ml-auto flex gap-4 sm:gap-6">
           <Link className="text-xs hover:underline underline-offset-4" href="#">
             Terms of Service
           </Link>
           <Link className="text-xs hover:underline underline-offset-4" href="#">
             Privacy
           </Link>
-        </nav>
-      </footer> */}
+        </nav>*/}
+      </footer>
+
     </div>
   )
 }
