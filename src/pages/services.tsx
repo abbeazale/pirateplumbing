@@ -2,10 +2,14 @@ import Link from 'next/link'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Anchor, Droplet, Wrench, Waves, Thermometer, Hammer, AlertTriangle, WrenchIcon, } from 'lucide-react'
+import Head from "next/head";
 import Header from '@/components/Header'
 export default function ServicesPage() {
   return (
     <div className="flex flex-col min-h-screen">
+      <Head>
+        <title>Our Services</title>
+      </Head>
       <Header />
       <main className="flex-1">
         <section className="w-full py-12 md:py-24 lg:py-32 bg-white">

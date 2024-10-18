@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Image from "next/image";
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -97,6 +98,9 @@ export default function Home() {
 
   return (
     <div className="flex flex-col min-h-screen">
+      <Head>
+        <title>Pirate Plumbing</title>
+      </Head>
       <Header />
       <main className="flex-row">
         <section className="w-full bg-cover min-h py-8 px-20 bg-[url('/broom.svg')]">
