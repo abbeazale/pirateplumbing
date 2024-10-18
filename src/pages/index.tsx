@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { useRouter } from "next/router";
 import Image from "next/image";
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -47,8 +46,7 @@ export default function Home() {
     location: "",
     phoneNumber: ""
   });
-
-  const router = useRouter();
+  const [isSuccess, setIsSuccess] = useState(false)
 
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = e.target.files;
@@ -61,7 +59,6 @@ export default function Home() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    let imagesCloudinaryUri: string[] = [];
     let imagesBase64: string[] = [];
 
     // Convert images to base64 strings
@@ -91,18 +88,19 @@ export default function Home() {
 
     if (response.ok) {
       console.log('Email sent successfully');
+      setIsSuccess(true)
     } else {
       console.error('Failed to send email');
+      setIsSuccess(false)
     }
     console.log("message sent: ", message.email, message.name, message.issue, message.location, message.phoneNumber, imagesBase64);
-    router.reload();
   };
 
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
       <main className="flex-row">
-        <section className="w-full bg-cover min-h-screen py-8 px-20 bg-[url('/broom.svg')]">
+        <section className="w-full bg-cover min-h py-8 px-20 bg-[url('/broom.svg')]">
           <div className="container mx-auto px-4 md:px-6 flex flex-col md:flex-row items-center">
             <div className="flex flex-col space-y-4 text-center md:text-left md:w-1/2">
               <div className="space-y-2">
@@ -111,13 +109,13 @@ export default function Home() {
                 </h1>
                 <p className="max-w-[700px] md:text-xl">
                   Pirate Plumbing is here to solve all of your water and drainage needs.
-                  Whether you need a simple repair or a complex install, we're here for you!
+                  Whether you need a simple repair or a complex install, we&apos;re here for you!
                 </p>
                 <p>
                   Pirate Plumbing sails to the rescue for all your plumbing emergencies in Vancouver.
                   From leaky pipes to full bathroom overhauls, our crew of expert plumbers is ready to
                   swashbuckle any job, big or small. We treasure prompt, professional service and quality
-                  workmanship that'll make your plumbing shine like buried gold.
+                  workmanship that&apos;ll make your plumbing shine like buried gold.
                 </p>
               </div>
               <div className="space-x-4">
@@ -213,6 +211,12 @@ export default function Home() {
               </div>
               <Button type="submit" className="w-full">Submit Request</Button>
             </form>
+            {isSuccess && (
+              <p className="mt-4 text-green-600 text-center">
+                Your message was sent! We will get back to you soon.
+              </p>
+            )}
+
           </div>
         </section>
       </main>

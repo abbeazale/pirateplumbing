@@ -44,19 +44,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   const emailElement = React.createElement(Email, emailProps);
   // Render the Email component to HTML
   const emailHtml = await render(emailElement);
-
-  /*const attachments = await Promise.all(
-      req.body.images.map(async (image: Image) => {
-          console.log('Image:', image)
-          console.log('Attempting to upload image to Cloudinary...');
-          const uploadResult = await uploadPic(image.url); // Pass the individual image
-          return { filename: uploadResult.name, path: uploadResult.url, encoding: "base64" };
-      })
-  ); */
-
   
 
-  var cloudinaryImageUri: string[] = [];
+  let cloudinaryImageUri: string[] = [];
   //upload images from base64 to cloudinary
   if (req.body.images.length > 0) {
     cloudinaryImageUri = await Promise.all(
@@ -73,39 +63,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   }));
 
 
-  var options = {
+  const options = {
     from: 'devkettleteam@gmail.com ',
     to: 'devkettleteam@gmail.com',
     subject: 'New Customer Form Submission',
     html: emailHtml,
-    attachments: attachments /*[
-      {
-        filename: 'image1.png',
-        path: `${cloudinaryImageUri[0]}`,
-
-      },
-      {
-        filename: 'image2.png',
-        path: `${cloudinaryImageUri[1]}`,
-
-      },
-      {
-        filename: 'image3.png',
-        path: `${cloudinaryImageUri[2]}`,
-
-      },
-      {
-        filename: 'image4.png',
-        path: `${cloudinaryImageUri[3]}`,
-
-      },
-      {
-        filename: 'image5.png',
-        path: `${cloudinaryImageUri[4]}`,
-
-      }
-
-    ] */
+    attachments: attachments || null
   };
 
   await transporter.sendMail(options);

@@ -70,7 +70,7 @@ export default function ServicesPage() {
               Ready to Set Sail on Your Next Plumbing Adventure?
             </h2>
             <p className="max-w-[700px] mx-auto mb-8">
-              Whether you're facing a leaky faucet or need a complete plumbing overhaul, our team is equipped to handle it with the precision of a seasoned navigator and the care of a trusted first mate.
+              Whether you&apos;re facing a leaky faucet or need a complete plumbing overhaul, our team is equipped to handle it with the precision of a seasoned navigator and the care of a trusted first mate.
             </p>
             <Button className="bg-white text-orange-600 hover:bg-orange-100">
               <Link href="/contact">
