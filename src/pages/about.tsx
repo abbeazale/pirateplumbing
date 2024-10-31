@@ -10,6 +10,13 @@ export default function About() {
     <div className="flex flex-col w-full min-h-screen bg-white text-black">
       <Head>
         <title>About Us</title>
+        <meta name="keywords" content="vancouver plubming, emergency plumbing, plumbing repair, residential plumbing, commerical plumbing" />
+        <meta name="keywords" content="24/7 plumbing, same day plumbing, weekend plumber" />
+        <meta name="keywords" content="drain repair, pipe repair, leak detection, water heater installation, water heater repair, sewer line repair, sewer repair" />
+        <meta name="keywords" content="clogged drain, blocked toilet, leaking pipe, running toielt, low water pressure, water leak, burst pipe" />
+        <meta name="keywords" content="sewer backup, hot water problem, bathroom plumbing, kitchen plumbing, noisy pipes" />
+        <meta name="keywords" content="plumber near me, local plumber, best plumber vancouver" />
+
       </Head>
 
       <Header />
