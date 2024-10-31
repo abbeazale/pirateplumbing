@@ -106,7 +106,7 @@ export default function Contact() {
         <meta name="keywords" content="clogged drain, blocked toilet, leaking pipe, running toielt, low water pressure, water leak, burst pipe" />
         <meta name="keywords" content="sewer backup, hot water problem, bathroom plumbing, kitchen plumbing, noisy pipes" />
         <meta name="keywords" content="plumber near me, local plumber, best plumber vancouver" />
-
+        <link rel="icon" href="pirate.svg" />
       </Head>
 
       <Header />
