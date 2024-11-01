@@ -100,13 +100,12 @@ export default function Home() {
     <div className="flex flex-col min-h-screen">
       <Head>
         <title>Pirate Plumbing</title>
-        <meta name="keywords" content="vancouver plubming, emergency plumbing, plumbing repair, residential plumbing, commerical plumbing" />
-        <meta name="keywords" content="24/7 plumbing, same day plumbing, weekend plumber" />
-        <meta name="keywords" content="drain repair, pipe repair, leak detection, water heater installation, water heater repair, sewer line repair, sewer repair" />
-        <meta name="keywords" content="clogged drain, blocked toilet, leaking pipe, running toielt, low water pressure, water leak, burst pipe" />
-        <meta name="keywords" content="sewer backup, hot water problem, bathroom plumbing, kitchen plumbing, noisy pipes" />
-        <meta name="keywords" content="plumber near me, local plumber, best plumber vancouver" />
+        <meta name="keywords" content="vancouver plumbing, emergency plumbing, plumbing repair, residential plumbing, commercial plumbing, 24/7 plumbing, same day plumbing, weekend plumber, drain repair, pipe repair, leak detection, water heater installation, water heater repair, sewer line repair, sewer repair, clogged drain, blocked toilet, leaking pipe, running toilet, low water pressure, water leak, burst pipe, sewer backup, hot water problem, bathroom plumbing, kitchen plumbing, noisy pipes, plumber near me, local plumber, best plumber vancouver" />
         <link rel="icon" href="pirate.svg" />
+        <meta property="og:title" content="Pirate Plumbing" />
+        <meta property="og:description" content="We offer 24-hour, seven days a week plumbing services for the Greater Vancouver Area that is affordable and professional. Contact us today to experience the difference." />
+        <meta property="og:image" content="/pirate.svg" />
+        <meta property="og:url" content="https://pirateplumbing.ca" />
       </Head>
       <Header />
       <main className="flex-row">
