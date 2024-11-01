@@ -106,6 +106,7 @@ export default function Home() {
         <meta property="og:description" content="We offer 24-hour, seven days a week plumbing services for the Greater Vancouver Area that is affordable and professional. Contact us today to experience the difference." />
         <meta property="og:image" content="/pirate.svg" />
         <meta property="og:url" content="https://pirateplumbing.ca" />
+        <meta name="google-site-verification" content="J0L-DHJdzVbRcfqyQL3t5k7lIHJdCc8DIxcll8eswws" />
       </Head>
       <Header />
       <main className="flex-row">
