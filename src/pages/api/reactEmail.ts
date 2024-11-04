@@ -8,7 +8,7 @@ import { NextApiRequest, NextApiResponse } from 'next';
 export const config = {
   api: {
     bodyParser: {
-      sizeLimit: '10mb', 
+      sizeLimit: '10mb',
     },
   },
 };
@@ -44,7 +44,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   const emailElement = React.createElement(Email, emailProps);
   // Render the Email component to HTML
   const emailHtml = await render(emailElement);
-  
+
 
   let cloudinaryImageUri: string[] = [];
   //upload images from base64 to cloudinary
@@ -65,7 +65,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
   const options = {
     from: 'devkettleteam@gmail.com ',
-    to: 'devkettleteam@gmail.com',
+    to: 'info@pirateplumbing.ca',
     subject: 'New Customer Form Submission',
     html: emailHtml,
     attachments: attachments || null
