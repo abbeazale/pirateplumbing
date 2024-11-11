@@ -114,6 +114,7 @@ export default function Home() {
         <meta property="og:url" content="https://pirateplumbing.ca" />
         <meta name="google-site-verification" content="J0L-DHJdzVbRcfqyQL3t5k7lIHJdCc8DIxcll8eswws" />
         <meta property="og:site_name" content="Pirate Plumbing" />
+        <link rel="canonical" href="https://pirateplumbing.ca" />
       </Head>
       <Header />
       <main className="flex-row">
