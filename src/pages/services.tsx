@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Anchor, Droplet, Wrench, Waves, Thermometer, Hammer, AlertTriangle, WrenchIcon, } from 'lucide-react'
+import { Anchor, Droplet, Wrench, Waves, Thermometer, Hammer, AlertTriangle, WrenchIcon, Snowflake } from 'lucide-react'
 import Head from "next/head";
 import Header from '@/components/Header'
 export default function ServicesPage() {
@@ -35,6 +35,8 @@ export default function ServicesPage() {
                 { icon: Wrench, title: "General Plumbing Repairs", description: "No job too big or small for our crew of skilled plumbing buccaneers." },
                 { icon: Hammer, title: "Complete Plumbing Overhauls", description: "Ready to give your plumbing system a complete makeover? We'll transform it like buried treasure!" },
                 { icon: Anchor, title: "Preventative Maintenance", description: "Keep your plumbing shipshape with our regular maintenance services." },
+                { icon: Snowflake, title: "Mini-Split Systems", description: "Efficient cooling solutions as precise as a captain's compass. We'll install and maintain your mini-split system with expert care." },
+                { icon: Thermometer, title: "HVAC Tune-Ups", description: "We'll fine-tune your HVAC system to perform as smoothly as a well-oiled ship's wheel." },
               ].map((service, index) => (
                 <Card key={index} className="transition-all hover:shadow-lg">
                   <CardHeader>
