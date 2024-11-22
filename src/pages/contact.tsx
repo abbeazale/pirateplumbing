@@ -107,6 +107,8 @@ export default function Contact() {
         <meta name="keywords" content="sewer backup, hot water problem, bathroom plumbing, kitchen plumbing, noisy pipes" />
         <meta name="keywords" content="plumber near me, local plumber, best plumber vancouver" />
         <link rel="icon" href="pirate.svg" />
+        <link rel="canonical" href="https://pirateplumbing.ca/contact" />
+
       </Head>
 
       <Header />
