@@ -24,7 +24,7 @@ const Email: React.FC<ServiceRequestProps> = ({
     <div className="bg-white font-sans p-6 max-w-2xl mx-auto">
       <div className="container mx-auto">
         <div className="flex justify-center mb-6">
-          <Img src="https://res.cloudinary.com/dlrb7nqlw/image/upload/v1728271621/uploads/pirate_mmnzel.png" alt="logo" width={120} height={130} />
+          <Img src="https://res.cloudinary.com/dlrb7nqlw/image/upload/v1742416862/uploads/pirate.png" alt="logo" width={120} height={130} />
         </div>
         
         <div className="text-center mb-6">
