@@ -65,7 +65,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
   const options = {
     from: 'devkettleteam@gmail.com ',
-    to: 'devkettleteam@gmail.com',
+    to: 'info@pirateplumbing.ca',
     subject: 'New Customer Form Submission',
     html: emailHtml,
     attachments: attachments || null
